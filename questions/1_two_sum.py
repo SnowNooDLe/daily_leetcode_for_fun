@@ -22,6 +22,7 @@ from typing import List
 
 
 def two_sum(nums: List[int], target: int):
+    """Runtime 3780ms, Memory 14.9 MB"""
     for first_index, first_value in enumerate(nums):
         for second_index, second_value in enumerate(nums[first_index + 1:]):
             if first_value + second_value == target:
@@ -39,22 +40,7 @@ To achieve this, I guess we have to remove one of the for loops
 
 
 def two_sum_2(nums: List[int], target: int):
-    """As specified, each input would have EXACTLY ONE SOLUTION and not use the SAME ELEMENT TWICE
-    Hence, start putting the difference between target and each value from the given list
-
-    For instance, with the first example:
-    The first value is 2 but 2 is not in the vals, add 9-2 = 7, now vals = [7]
-    The second value is 7 and 7 is in vals. Hence, we pair the index of current value from vals and nums
-    vals = [7], vals.index(value=7) = 0 and index which is 1 as it's the second element of the nums
-    as we go over the nums list, we create vals which is a temporary list, so the indexes are matching.
-
-    With the second example:
-    The first value is 3 but 3 is not in the vals, add 6-3=3, now vals = [3]
-    The second value is 2 but 2 is also not in the vals, add 6-2=4, now vals = [3,4]
-    The third value is 4 and 4 is in the vals, then we return as
-    vals = [3,4], vals.index(value=4) = 1 and index which is 2 => [1,2]
-
-    """
+    """Runtime 525ms, Memory 15.1 MB"""
     vals = []
     for index, value in enumerate(nums):
         if value in vals:
