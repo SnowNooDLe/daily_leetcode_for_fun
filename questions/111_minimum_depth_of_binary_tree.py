@@ -24,8 +24,11 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+
+
 class Solution:
     def minDepth(self, root: Optional[TreeNode]) -> int:
+        """Runtime 730ms, Memory 55.1MB"""
         if root is None:
             return 0
 
