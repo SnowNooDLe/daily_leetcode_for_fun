@@ -33,7 +33,7 @@ def generate(numRows: int) -> List[List[int]]:
     """
        1
       1 1
-     1 2 1 index 0 and row-1 = 1, middle index = previous row's middle index - 1 + index
+     1 2 1 index 0 and row-1 = 1 rest index = previous row's index - 1 + index
     1 3 3 1  
     """
     while start_row_index < numRows:

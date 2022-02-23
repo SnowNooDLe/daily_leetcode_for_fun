@@ -17,7 +17,6 @@ from typing import List
 
 
 def getRow(rowIndex: int) -> List[int]:
-    """Runtime 32ms, Memory 13.9ms"""
     answers = [[1], [1, 1]]
     if rowIndex < 2:
         return answers[rowIndex]
@@ -45,7 +44,6 @@ def getRow(rowIndex: int) -> List[int]:
         answers.append(new_row)
         start_row_index += 1
 
-    # Unlike the Pascal's triangle, return the n'th row
     return answers[rowIndex]
 
 
@@ -53,3 +51,7 @@ print(getRow(0))
 print(getRow(1))
 print(getRow(2))
 print(getRow(3))
+print(getRow(4))
+print(getRow(5))
+print(getRow(6))
+print(getRow(7))
