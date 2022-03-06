@@ -28,6 +28,7 @@ MOD = 10 ** 9 + 7
 
 
 def countOrders(n: int) -> int:
+    """Runtime 35ms, Memory 13.9MB"""
     result = 1
     # Only one combination available when we only have one item to pick up and deliver
     if n == 1:
