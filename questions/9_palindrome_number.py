@@ -37,13 +37,23 @@ print(is_palindrome(10))
 
 
 def is_palindrome_2(x: int) -> bool:
-    """Runtime 87ms, Memory 14.3 MB"""
+    """Without converting to str
+    Runtime 80ms, Memory 13.8 MB"""
     if x < 0:
         return False
 
-    return True if str(x)[0:] == str(x)[::-1] else False
+    reverse = 0
+    origin_x = x
+
+    while x != 0:
+        remainder = int(x % 10)
+        reverse = reverse * 10 + remainder
+        x = int(x / 10)
+
+    return True if origin_x == reverse else False
 
 
-print(is_palindrome_2(121))
-print(is_palindrome_2(-121))
-print(is_palindrome_2(10))
+# print(is_palindrome_2(121))
+# print(is_palindrome_2(-121))
+# print(is_palindrome_2(10))
+print(is_palindrome_2(313))
