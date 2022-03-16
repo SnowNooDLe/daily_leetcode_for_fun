@@ -35,34 +35,48 @@ class ListNode:
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         """Runtime 1464ms, Memory 17.6MB not the best approach I reckon"""
-        visited = []
-        while head:
-            visited.append(head)
-            head = head.next
+        slow = fast = head
+        while fast and fast.next:
+            slow, fast = slow.next, fast.next.next
+            if slow == fast:
+                break
+        else:
+            return None  # if not (fast and fast.next): return None
+        while head != slow:
+            head, slow = head.next, slow.next
+        return head
 
-            if head in visited:
-                return True
 
-        return False
-
+# if __name__ == "__main__":
+#     a = ListNode(3)
+#     b = ListNode(2)
+#     c = ListNode(0)
+#     d = ListNode(-4)
+#
+#     a.next = b
+#     b.next = c
+#     c.next = d
+#     d.next = b
+#     solution = Solution()
+#     print(solution.hasCycle(a))
+#
+# if __name__ == "__main__":
+#     a = ListNode(1)
+#     b = ListNode(2)
+#
+#     a.next = b
+#     solution = Solution()
+#     print(solution.hasCycle(a))
 
 if __name__ == "__main__":
-    a = ListNode(3)
-    b = ListNode(2)
-    c = ListNode(0)
-    d = ListNode(-4)
+    a = [1, 2, 3, 4]
+    print("start")
+    b = int(input(""))
 
-    a.next = b
-    b.next = c
-    c.next = d
-    d.next = b
-    solution = Solution()
-    print(solution.hasCycle(a))
-
-if __name__ == "__main__":
-    a = ListNode(1)
-    b = ListNode(2)
-
-    a.next = b
-    solution = Solution()
-    print(solution.hasCycle(a))
+    while b not in a:
+        break
+        print("not in")
+        b = int(input(""))
+    else:
+        print("wtf")
+    print("end")

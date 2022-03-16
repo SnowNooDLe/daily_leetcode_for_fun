@@ -54,6 +54,6 @@ def is_palindrome_2(x: int) -> bool:
 
 
 # print(is_palindrome_2(121))
-# print(is_palindrome_2(-121))
-# print(is_palindrome_2(10))
+print(is_palindrome_2(-121))
+print(is_palindrome_2(10))
 print(is_palindrome_2(313))

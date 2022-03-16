@@ -70,6 +70,6 @@ def simplifyPath(path: str) -> str:
 
 
 print(simplifyPath("/home/"))
-print(simplifyPath("/../"))
+print(simplifyPath("../"))
 print(simplifyPath("/home//foo/"))
 print(simplifyPath("/a/./b/../../c/"))
