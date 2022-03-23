@@ -52,6 +52,7 @@ CONSTANT_NUMERIC = {
 def getSmallestString(n: int, k: int) -> str:
     """Runtime 770ms, Memory 15.8MB"""
     answer = []
+    MAX_NUMERIC_VAL = 26
     # AS we want n number of characters
     while n > 0:
         # Before we add a new element, by hitting here means we needed to add more element,
@@ -61,9 +62,9 @@ def getSmallestString(n: int, k: int) -> str:
         # k = total sum of integer, n = number of items, +1 we are going to add one regardless as we will add something
         max_numeric = k - n + 1
         # If its bigger than or equal to 26, we can safely add z
-        if max_numeric >= 26:
+        if max_numeric >= MAX_NUMERIC_VAL:
             answer.append("z")
-            k -= 26
+            k -= MAX_NUMERIC_VAL
         else:
             answer.append(CONSTANT_NUMERIC[max_numeric])
             k -= max_numeric
