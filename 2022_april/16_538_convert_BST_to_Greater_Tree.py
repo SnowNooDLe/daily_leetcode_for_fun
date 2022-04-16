@@ -40,8 +40,8 @@ class Solution:
             return None
 
         self.values.append(root.val)
-        root.left = self.get_values(root.left)
-        root.right = self.get_values(root.right)
+        self.get_values(root.left)
+        self.get_values(root.right)
 
     def convertBST(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         # To get all the values within the tree
